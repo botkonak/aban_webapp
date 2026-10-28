@@ -9,7 +9,7 @@ services:
       - key: BOT_TOKEN
         sync: false
       - key: BOT_USERNAME
-        value: anirufutures_bot
+        value: abantrade_bot
       - key: ADMIN_UID
         sync: false
       - key: WEBHOOK_PATH
@@ -24,8 +24,6 @@ services:
         value: "8000"
       - key: LOG_LEVEL
         value: INFO
-      - key: WEBAPP_URL
-        value: https://aban-trade.onrender.com
     disk:
       name: aban-data
       mountPath: /app/data
