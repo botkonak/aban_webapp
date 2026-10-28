@@ -1,0 +1,11 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+data/*.db
+data/*.db-*
+data/*_secret
+data/webapp_uploads/
+*.zip
+_verify_server.py

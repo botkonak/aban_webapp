@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>ورود | آبان ترید</title>
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("aban-theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="/assets/css/main.css?v=20261031">
+</head>
+<body>
+  <div class="auth-page">
+    <section class="auth-visual">
+      <div class="auth-brand">
+        <span class="brand-mark"><svg class="icon"><use href="/assets/icons/sprite.svg#i-brand"></use></svg></span>
+        <span class="brand-text">
+          <span class="brand-name"><span data-brand="name">آبان ترید</span></span>
+          <span class="brand-sub" data-brand="slogan">اکوسیستم تحلیل ساختاری</span>
+        </span>
+      </div>
+
+      <div class="auth-hero">
+        <h1 data-brand="login-title">تصمیم‌های دقیق‌تر،<br>با ساختار واقعی بازار</h1>
+        <p data-brand="login-subtitle">بیش از ۲۰۰ استراتژی ساختاری در ۲۶ دسته‌بندی، همراه با نمودار حرفه‌ای، تحلیل چند تایم‌فریمی و تاریخچه جستجو؛ همه در یک فضای کاری یکپارچه.</p>
+        <div class="auth-features">
+          <div class="auth-feature">
+            <span class="fi"><svg class="icon"><use href="/assets/icons/sprite.svg#i-layers"></use></svg></span>
+            <span>شناسایی خودکار الگوهای ساختاری و سطوح کلیدی</span>
+          </div>
+          <div class="auth-feature">
+            <span class="fi"><svg class="icon"><use href="/assets/icons/sprite.svg#i-activity"></use></svg></span>
+            <span>اسکن هم‌زمان نمادها در چند صرافی با اولویت هوشمند</span>
+          </div>
+          <div class="auth-feature">
+            <span class="fi"><svg class="icon"><use href="/assets/icons/sprite.svg#i-shield"></use></svg></span>
+            <span>دسترسی امن با نام کاربری، رمز اختصاصی و نشست محافظت‌شده</span>
+          </div>
+        </div>
+        <div class="auth-mini-chart" aria-hidden="true">
+          <i style="height:32%"></i><i style="height:48%"></i><i style="height:40%"></i><i style="height:62%"></i>
+          <i style="height:55%"></i><i style="height:74%"></i><i style="height:68%"></i><i style="height:86%"></i>
+          <i style="height:78%"></i><i style="height:94%"></i>
+        </div>
+      </div>
+
+      <div class="auth-foot" data-brand="login-footer">آبان ترید؛ تحلیل ساختاری برای معامله‌گران حرفه‌ای</div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-top-actions">
+        <button class="icon-btn" id="themeBtn" title="تغییر حالت روشن / تاریک" aria-label="تغییر پوسته">
+          <svg class="icon" id="themeIcon"><use href="/assets/icons/sprite.svg#i-moon"></use></svg>
+        </button>
+      </div>
+
+      <div class="auth-card">
+        <div class="auth-brand brand-mobile">
+          <span class="brand-mark"><svg class="icon"><use href="/assets/icons/sprite.svg#i-brand"></use></svg></span>
+          <span class="brand-text">
+            <span class="brand-name"><span data-brand="name">آبان ترید</span></span>
+            <span class="brand-sub" data-brand="slogan">تحلیل ساختاری بازار</span>
+          </span>
+        </div>
+
+        <div class="eyebrow"><svg class="icon"><use href="/assets/icons/sprite.svg#i-lock"></use></svg> ورود امن</div>
+        <h2 data-brand="login-heading">خوش آمدید</h2>
+        <p class="auth-sub" data-brand="login-subtitle">برای ورود به فضای تحلیل، نام کاربری و رمز عبوری را که از ربات آبان ترید دریافت کرده‌اید وارد کنید.</p>
+
+        <div class="segmented auth-tabs" id="authTabs">
+          <button class="seg active" type="button" data-tab="password">ورود با رمز</button>
+          <button class="seg" type="button" data-tab="otp" id="otpTab" hidden>ورود با پیامک</button>
+        </div>
+
+        <form class="auth-form" id="loginForm" autocomplete="on" novalidate>
+          <div class="auth-error" id="loginError" role="alert">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-alert"></use></svg>
+            <span id="loginErrorText"></span>
+          </div>
+          <div class="field">
+            <label class="label" for="username">نام کاربری</label>
+            <input class="input mono" id="username" name="username" type="text"
+                   placeholder="user_123456789" autocomplete="username" spellcheck="false" autocapitalize="none">
+            <div class="hint">همان نام کاربری که ربات برای شما ایجاد کرده است.</div>
+          </div>
+          <div class="field">
+            <label class="label" for="password">رمز عبور</label>
+            <div class="password-wrap">
+              <input class="input" id="password" name="password" type="password" required
+                     placeholder="رمز عبور خود را وارد کنید" autocomplete="current-password" spellcheck="false">
+              <button class="eye" type="button" id="togglePass" aria-label="نمایش رمز">
+                <svg class="icon" id="eyeIcon"><use href="/assets/icons/sprite.svg#i-eye"></use></svg>
+              </button>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit" id="loginBtn">
+            <span data-brand="login-button">ورود به حساب</span>
+          </button>
+        </form>
+
+        <form class="auth-form" id="otpForm" autocomplete="on" hidden novalidate>
+          <div class="auth-error" id="otpError" role="alert">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-alert"></use></svg>
+            <span id="otpErrorText"></span>
+          </div>
+          <div class="field">
+            <label class="label" for="phone">شماره موبایل</label>
+            <input class="input mono" id="phone" name="phone" type="tel" inputmode="tel"
+                   placeholder="+989121234567" autocomplete="tel" spellcheck="false">
+            <div class="hint">شماره را با کد کشور وارد کنید؛ مثال: +989121234567</div>
+          </div>
+          <button class="btn btn-soft btn-block" type="button" id="otpSendBtn">ارسال کد یکبار مصرف</button>
+          <div class="field" id="otpCodeField" hidden>
+            <label class="label" for="otpCode">کد یکبار مصرف</label>
+            <input class="input mono" id="otpCode" name="code" inputmode="numeric" maxlength="8"
+                   autocomplete="one-time-code" placeholder="- - - - -" spellcheck="false">
+            <div class="hint" id="otpHint" hidden></div>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit" id="otpVerifyBtn" hidden>تایید و ورود</button>
+        </form>
+
+        <div class="auth-note">
+          <svg class="icon"><use href="/assets/icons/sprite.svg#i-info"></use></svg>
+          <span data-brand="login-note">پس از فعال‌سازی اشتراک تحلیل ساختاری، نام کاربری و رمز عبور برای شما ارسال می‌شود. مدیران از لینک اختصاصی داخل ربات وارد می‌شوند.</span>
+        </div>
+
+        <div class="login-state" id="loginState">
+          حساب ندارید؟ <a href="/register">ثبت‌نام کنید</a> — اگر رمز خود را ندارید، از منوی ربات آبان ترید وارد بخش «اشتراک تحلیل ساختاری» شوید.
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="toasts"></div>
+  <script src="/assets/js/common.js?v=20261031"></script>
+  <script src="/assets/js/login.js?v=20261031"></script>
+</body>
+</html>

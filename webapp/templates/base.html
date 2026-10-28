@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>{{ meta.title }}</title>
+  {{ meta_html|safe }}
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/public.css?v=20261027">
+</head>
+<body class="public-body">
+  {% if site.maintenance.on %}
+  <div class="pub-maintenance">{{ site.maintenance.text }}</div>
+  {% endif %}
+
+  <header class="pub-header">
+    <div class="pub-container pub-header-inner">
+      <a class="pub-brand" href="/">
+        {% if brand.logo %}
+          <img src="{{ brand.logo }}" alt="{{ brand.name }}" class="pub-logo">
+        {% else %}
+          <span class="pub-brand-mark" aria-hidden="true">آ</span>
+        {% endif %}
+        <span class="pub-brand-text">
+          <strong>{{ brand.name }}</strong>
+          <small>{{ brand.slogan }}</small>
+        </span>
+      </a>
+
+      <input type="checkbox" id="pubNavToggle" class="pub-nav-toggle" aria-hidden="true">
+      <label for="pubNavToggle" class="pub-nav-btn" aria-label="منو">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="pub-nav" aria-label="منوی اصلی">
+        {% from "_menu.html" import menu %}
+        {{ menu(site.header_menu) }}
+        <div class="pub-nav-actions">
+          {% if site.bot_url %}<a class="pub-btn pub-btn-ghost" href="{{ site.bot_url }}" target="_blank" rel="noopener">ربات تلگرام</a>{% endif %}
+          <a class="pub-btn pub-btn-primary" href="/login">ورود / ثبت‌نام</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pub-main">
+    <div class="pub-container pub-layout {% if show_sidebar and site.sidebar_position == 'left' %}sidebar-left{% endif %}"
+         style="--content-max-width: {% if width_px %}{{ width_px }}px{% else %}100%{% endif %}">
+      {% if show_sidebar and site.sidebar_position == 'right' %}
+        {% include "_sidebar.html" %}
+      {% endif %}
+      <div class="pub-content">
+        {% block content %}{% endblock %}
+      </div>
+      {% if show_sidebar and site.sidebar_position == 'left' %}
+        {% include "_sidebar.html" %}
+      {% endif %}
+    </div>
+  </main>
+
+  <footer class="pub-footer">
+    <div class="pub-container pub-footer-inner">
+      <div>
+        <div class="pub-footer-brand">{{ brand.name }}</div>
+        <p class="pub-footer-text">{{ brand.slogan }}</p>
+      </div>
+      <nav class="pub-footer-nav" aria-label="منوی پابرگ">
+        {% from "_menu.html" import menu %}
+        {{ menu(site.footer_menu) }}
+      </nav>
+    </div>
+    <div class="pub-container pub-copy">
+      <span>© {{ site.year }} {{ brand.name }} — همه‌ی حقوق محفوظ است.</span>
+      <span><a href="/sitemap.xml">نقشه سایت</a></span>
+    </div>
+  </footer>
+</body>
+</html>

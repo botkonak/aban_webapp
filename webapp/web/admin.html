@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f4f6fb">
+  <title>پنل مدیریت | آبان ترید</title>
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("aban-theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="/assets/css/main.css?v=20261031">
+  <link rel="stylesheet" href="/static/ckeditor/ckeditor.css?v=20261031">
+</head>
+<body>
+  <div class="shell">
+    <div class="scrim" id="scrim"></div>
+
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="/admin" data-admin-link="overview">
+        <span class="brand-mark"><svg class="icon"><use href="/assets/icons/sprite.svg#i-brand"></use></svg></span>
+        <span class="brand-text">
+          <span class="brand-name"><span data-brand="name">آبان ترید</span> <span class="admin-badge">مدیریت</span></span>
+          <span class="brand-sub" data-brand="slogan">مرکز کنترل اکوسیستم</span>
+        </span>
+      </a>
+
+      <nav>
+        <div class="nav-group">
+          <div class="nav-label">نمای کلی</div>
+          <a class="nav-link" href="/admin" data-admin-link="overview" data-nav="overview">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-dashboard"></use></svg>
+            <span>داشبورد مدیریت</span>
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">مدیریت محتوا</div>
+          <a class="nav-link" href="/admin/pages" data-admin-link="pages" data-nav="pages">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-book"></use></svg>
+            <span>صفحات ثابت</span>
+          </a>
+          <a class="nav-link" href="/admin/education" data-admin-link="education" data-nav="education">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-layers"></use></svg>
+            <span>آموزش و مقالات</span>
+          </a>
+          <a class="nav-link" href="/admin/menus" data-admin-link="menus" data-nav="menus">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-menu"></use></svg>
+            <span>منوهای سایت</span>
+          </a>
+          <a class="nav-link" href="/admin/media" data-admin-link="media" data-nav="media">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-image"></use></svg>
+            <span>کتابخانه رسانه</span>
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">سئو</div>
+          <a class="nav-link" href="/admin/seo?tab=seo-web" data-admin-link="seo" data-nav="seo">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-search"></use></svg>
+            <span>سئوی وب</span>
+          </a>
+          <a class="nav-link" href="/admin/seo?tab=seo-telegram" data-admin-link="seo" data-nav="seo">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-send"></use></svg>
+            <span>سئوی تلگرام</span>
+          </a>
+          <a class="nav-link" href="/admin/seo?tab=seo-technical" data-admin-link="seo" data-nav="seo">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-settings"></use></svg>
+            <span>تنظیمات فنی</span>
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">ظاهر</div>
+          <a class="nav-link" href="/admin/appearance" data-admin-link="appearance" data-nav="appearance">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-sparkles"></use></svg>
+            <span>تنظیمات قالب</span>
+          </a>
+          <a class="nav-link" href="/admin/branding" data-admin-link="branding" data-nav="branding">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-image"></use></svg>
+            <span>برندینگ و ظاهر سایت</span>
+          </a>
+          <a class="nav-link" href="/admin/maintenance" data-admin-link="maintenance" data-nav="maintenance">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-alert"></use></svg>
+            <span>حالت تعمیر</span>
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">احراز هویت و ورود</div>
+          <a class="nav-link" href="/admin/registration" data-admin-link="registration" data-nav="registration">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-user"></use></svg>
+            <span>ثبت‌نام و فیلدها</span>
+          </a>
+          <a class="nav-link" href="/admin/web-users" data-admin-link="web-users" data-nav="web-users">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-users"></use></svg>
+            <span>کاربران وب‌اپ</span>
+          </a>
+          <a class="nav-link" href="/admin/otp" data-admin-link="otp" data-nav="otp">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-phone"></use></svg>
+            <span>ورود با پیامک</span>
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">اشتراک و پرداخت</div>
+          <a class="nav-link" href="/admin/users" data-admin-link="users" data-nav="users">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-users"></use></svg>
+            <span>کاربران</span>
+            <span class="nav-badge" id="navUsersBadge" hidden></span>
+          </a>
+          <a class="nav-link" href="/admin/plans?tab=plans" data-admin-link="plans" data-nav="plans">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-star"></use></svg>
+            <span>تنظیمات پلن</span>
+          </a>
+          <a class="nav-link" href="/admin/plans?tab=networks" data-admin-link="plans" data-nav="plans">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-wallet"></use></svg>
+            <span>شبکه‌های پرداخت</span>
+          </a>
+          <a class="nav-link" href="/admin/plans?tab=discounts" data-admin-link="plans" data-nav="plans">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-sparkles"></use></svg>
+            <span>تخفیف</span>
+          </a>
+          <a class="nav-link" href="/admin/payments?status=pending" data-admin-link="payments" data-nav="payments">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-clock"></use></svg>
+            <span>درخواست‌های خرید</span>
+          </a>
+          <a class="nav-link" href="/admin/payments" data-admin-link="payments" data-nav="payments">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-history"></use></svg>
+            <span>پرداخت‌ها</span>
+          </a>
+          <a class="nav-link" href="/admin/support" data-admin-link="support" data-nav="support">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-message"></use></svg>
+            <span>پشتیبانی</span>
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">عملیات و بازار</div>
+          <a class="nav-link" href="/admin/strategies" data-admin-link="strategies" data-nav="strategies">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-layers"></use></svg>
+            <span>استراتژی‌ها و راهنما</span>
+          </a>
+          <a class="nav-link" href="/admin/exchanges" data-admin-link="exchanges" data-nav="exchanges">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-exchange"></use></svg>
+            <span>صرافی‌ها</span>
+          </a>
+          <a class="nav-link" href="/admin/ticker" data-admin-link="ticker" data-nav="ticker">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-activity"></use></svg>
+            <span>نوار قیمت زنده</span>
+          </a>
+          <a class="nav-link" href="/admin/messages" data-admin-link="messages" data-nav="messages">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-send"></use></svg>
+            <span>ارسال پیام</span>
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">امنیت و نگهداری</div>
+          <a class="nav-link" href="/admin/security-center?tab=overview" data-admin-link="security-center" data-nav="security-center">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-dashboard"></use></svg>
+            <span>نمای کلی امنیت</span>
+          </a>
+          <a class="nav-link" href="/admin/security" data-admin-link="security" data-nav="security">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-lock"></use></svg>
+            <span>محدودیت‌ها</span>
+          </a>
+          <a class="nav-link" href="/admin/security-center?tab=events" data-admin-link="security-center" data-nav="security-center">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-shield"></use></svg>
+            <span>رویدادها و بلاک‌ها</span>
+          </a>
+          <a class="nav-link" href="/admin/security-center?tab=audit" data-admin-link="security-center" data-nav="security-center">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-history"></use></svg>
+            <span>لاگ فعالیت</span>
+          </a>
+          <a class="nav-link" href="/admin/api-keys" data-admin-link="api-keys" data-nav="api-keys">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-hash"></use></svg>
+            <span>کلیدهای API</span>
+          </a>
+          <a class="nav-link" href="/admin/backups" data-admin-link="backups" data-nav="backups">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-download"></use></svg>
+            <span>بکاپ و بازیابی</span>
+          </a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">پیکربندی</div>
+          <a class="nav-link" href="/admin/settings" data-admin-link="settings" data-nav="settings">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-settings"></use></svg>
+            <span>تنظیمات سامانه</span>
+          </a>
+          <a class="nav-link" href="/">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-arrow-left"></use></svg>
+            <span>بازگشت به وب‌اپ</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-spacer"></div>
+
+      <div class="side-card">
+        <div class="side-card-title">
+          <svg class="icon"><use href="/assets/icons/sprite.svg#i-shield"></use></svg>
+          <span>وضعیت سامانه</span>
+        </div>
+        <div class="side-card-text" id="adminSideStatus">در حال دریافت وضعیت…</div>
+        <div class="status-line" style="margin-top:8px">
+          <span class="dot green"></span><span>وب‌سرور و ربات متصل</span>
+        </div>
+      </div>
+
+      <div class="side-user">
+        <div class="avatar violet" id="sideAvatar">م</div>
+        <div class="flex-1">
+          <div class="side-user-name" id="sideUserName">مدیریت آبان</div>
+          <div class="side-user-sub" id="sideUserSub">دسترسی کامل</div>
+        </div>
+        <button class="icon-btn sm" id="sideLogout" title="خروج از حساب" aria-label="خروج">
+          <svg class="icon"><use href="/assets/icons/sprite.svg#i-logout"></use></svg>
+        </button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="منو">
+          <svg class="icon"><use href="/assets/icons/sprite.svg#i-menu"></use></svg>
+        </button>
+        <div class="topbar-title">
+          <h2 id="pageTitle">داشبورد مدیریت</h2>
+          <span id="pageSub">نمای کلی کاربران، پرداخت‌ها و سامانه</span>
+        </div>
+        <div class="topbar-spacer"></div>
+        <div class="topbar-actions">
+          <a class="icon-btn" href="/" title="نمای کاربری" aria-label="نمای کاربری">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-external"></use></svg>
+          </a>
+          <button class="icon-btn" id="themeBtn" title="تغییر حالت روشن / تاریک" aria-label="تغییر پوسته">
+            <svg class="icon" id="themeIcon"><use href="/assets/icons/sprite.svg#i-moon"></use></svg>
+          </button>
+          <div class="topbar-user">
+            <div class="avatar violet" id="topAvatar">م</div>
+            <div>
+              <div class="topbar-user-name" id="topUserName">مدیریت آبان</div>
+              <div class="topbar-user-sub" id="topUserSub">مدیر اکوسیستم</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content" id="view" aria-live="polite"></main>
+    </div>
+  </div>
+
+  <div id="toasts"></div>
+  <div id="modalRoot" class="modal-root"></div>
+
+  <script src="/assets/js/common.js?v=20261031"></script>
+  <script src="/static/ckeditor/ckeditor.js?v=20261031"></script>
+  <script src="/static/ckeditor/translations/fa.js?v=20261031"></script>
+  <script src="/assets/js/cms-editor.js?v=20261031"></script>
+  <script src="/assets/js/admin.js?v=20261031"></script>
+</body>
+</html>

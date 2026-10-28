@@ -1,0 +1,10 @@
+{% macro menu(items, level=0) -%}
+  <ul class="site-menu{% if level %} site-submenu{% endif %}">
+    {% for item in items %}
+      <li class="{% if item.children %}has-children{% endif %}">
+        <a href="{{ item.href }}"{% if item.href.startswith('http') %} target="_blank" rel="noopener"{% endif %}>{{ item.title }}</a>
+        {% if item.children %}{{ menu(item.children, level + 1) }}{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{%- endmacro %}

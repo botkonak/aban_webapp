@@ -1,0 +1,46 @@
+{% from "_menu.html" import menu %}
+<aside class="site-sidebar">
+  {% if sidebar_ctx.categories %}
+  <section class="widget">
+    <h3 class="widget-title">دسته‌بندی‌ها</h3>
+    <ul class="widget-list">
+      {% for cat in sidebar_ctx.categories %}
+        <li><a href="/category/{{ cat.slug }}"><span>{{ cat.name }}</span><b>{{ cat.posts }}</b></a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if sidebar_ctx.recent %}
+  <section class="widget">
+    <h3 class="widget-title">آخرین مطالب آموزش</h3>
+    <ul class="widget-posts">
+      {% for post in sidebar_ctx.recent %}
+        <li>
+          <a href="/education/{{ post.slug }}">{{ post.title }}</a>
+          <span class="widget-meta">{{ post.published_at_fa }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if sidebar_ctx.pages %}
+  <section class="widget">
+    <h3 class="widget-title">صفحات</h3>
+    <ul class="widget-list">
+      {% for page in sidebar_ctx.pages %}
+        <li><a href="/p/{{ page.slug }}"><span>{{ page.title }}</span></a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if site.bot_url %}
+  <section class="widget widget-cta">
+    <h3 class="widget-title">ربات تلگرام</h3>
+    <p>تحلیل و سیگنال‌های ساختاری را از ربات آبان ترید دریافت کنید.</p>
+    <a class="pub-btn pub-btn-primary" href="{{ site.bot_url }}" target="_blank" rel="noopener">ورود به ربات</a>
+  </section>
+  {% endif %}
+</aside>

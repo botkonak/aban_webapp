@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: aban-trade
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: BOT_USERNAME
+        value: anirufutures_bot
+      - key: ADMIN_UID
+        sync: false
+      - key: WEBHOOK_PATH
+        value: aniru-futures-hook
+      - key: WEBHOOK_SECRET
+        generateValue: true
+      - key: WEBAPP_SECRET
+        generateValue: true
+      - key: WEBAPP_COOKIE_SECURE
+        value: "true"
+      - key: PORT
+        value: "8000"
+      - key: LOG_LEVEL
+        value: INFO
+    disk:
+      name: aban-data
+      mountPath: /app/data
+      sizeGB: 1

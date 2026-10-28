@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="pub-card article">
+  <header class="article-head">
+    <h1 class="article-title">{{ post.title }}</h1>
+    {% if post.summary %}<p class="article-summary">{{ post.summary|safe }}</p>{% endif %}
+    <div class="article-meta">
+      {% if post.category_name %}<a class="pub-chip" href="/category/{{ post.category_slug }}">{{ post.category_name }}</a>{% endif %}
+      <span>{{ post.published_at_fa }}</span>
+      <span>{{ post.reading_time }} دقیقه مطالعه</span>
+      <span>{{ post.views }} بازدید</span>
+    </div>
+  </header>
+  {% if post.thumbnail %}
+    <figure class="article-cover"><img src="{{ post.thumbnail }}" alt="{{ post.title }}" loading="lazy"></figure>
+  {% endif %}
+  <div class="prose">
+    {{ post.content|safe }}
+  </div>
+</article>
+{% endblock %}

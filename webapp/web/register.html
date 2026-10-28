@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>ثبت‌نام | آبان ترید</title>
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("aban-theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="/assets/css/main.css?v=20261031">
+</head>
+<body>
+  <div class="auth-page">
+    <section class="auth-visual">
+      <div class="auth-brand">
+        <span class="brand-mark"><svg class="icon"><use href="/assets/icons/sprite.svg#i-brand"></use></svg></span>
+        <span class="brand-text">
+          <span class="brand-name"><span data-brand="name">آبان ترید</span></span>
+          <span class="brand-sub" data-brand="slogan">اکوسیستم تحلیل ساختاری</span>
+        </span>
+      </div>
+
+      <div class="auth-hero">
+        <h1>عضویت در آبان ترید</h1>
+        <p>حساب کاربری بسازید تا به تحلیل ساختاری، اسکنر چند تایم‌فریمی و اشتراک اختصاصی دسترسی داشته باشید. ثبت‌نام رایگان است و برای فعال‌سازی تحلیل، از بخش خرید اشتراک اقدام کنید.</p>
+        <div class="auth-features">
+          <div class="auth-feature">
+            <span class="fi"><svg class="icon"><use href="/assets/icons/sprite.svg#i-layers"></use></svg></span>
+            <span>دسترسی به بیش از ۲۰۰ استراتژی ساختاری</span>
+          </div>
+          <div class="auth-feature">
+            <span class="fi"><svg class="icon"><use href="/assets/icons/sprite.svg#i-activity"></use></svg></span>
+            <span>خرید و تمدید اشتراک از داخل وب‌اپ</span>
+          </div>
+          <div class="auth-feature">
+            <span class="fi"><svg class="icon"><use href="/assets/icons/sprite.svg#i-shield"></use></svg></span>
+            <span>حساب محافظت‌شده با رمز عبور اختصاصی</span>
+          </div>
+        </div>
+        <div class="auth-mini-chart" aria-hidden="true">
+          <i style="height:32%"></i><i style="height:48%"></i><i style="height:40%"></i><i style="height:62%"></i>
+          <i style="height:55%"></i><i style="height:74%"></i><i style="height:68%"></i><i style="height:86%"></i>
+          <i style="height:78%"></i><i style="height:94%"></i>
+        </div>
+      </div>
+
+      <div class="auth-foot" data-brand="login-footer">آبان ترید؛ تحلیل ساختاری برای معامله‌گران حرفه‌ای</div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-top-actions">
+        <button class="icon-btn" id="themeBtn" title="تغییر حالت روشن / تاریک" aria-label="تغییر پوسته">
+          <svg class="icon" id="themeIcon"><use href="/assets/icons/sprite.svg#i-moon"></use></svg>
+        </button>
+      </div>
+
+      <div class="auth-card">
+        <div class="auth-brand brand-mobile">
+          <span class="brand-mark"><svg class="icon"><use href="/assets/icons/sprite.svg#i-brand"></use></svg></span>
+          <span class="brand-text">
+            <span class="brand-name"><span data-brand="name">آبان ترید</span></span>
+            <span class="brand-sub" data-brand="slogan">تحلیل ساختاری بازار</span>
+          </span>
+        </div>
+
+        <div class="eyebrow"><svg class="icon"><use href="/assets/icons/sprite.svg#i-user"></use></svg> ثبت‌نام</div>
+        <h2>ساخت حساب جدید</h2>
+        <p class="auth-sub">اطلاعات زیر را تکمیل کنید. نام کاربری شما پس از ساخت قابل تغییر نیست.</p>
+
+        <form class="auth-form" id="registerForm" autocomplete="on" novalidate>
+          <div class="auth-error" id="registerError" role="alert">
+            <svg class="icon"><use href="/assets/icons/sprite.svg#i-alert"></use></svg>
+            <span id="registerErrorText"></span>
+          </div>
+          <div id="registerFields" class="auth-fields">
+            <div class="auth-loading"><span class="spinner"></span> در حال دریافت فرم ثبت‌نام…</div>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit" id="registerBtn" hidden>
+            <span>ساخت حساب</span>
+          </button>
+        </form>
+
+        <div class="auth-note">
+          <svg class="icon"><use href="/assets/icons/sprite.svg#i-info"></use></svg>
+          <span>پس از ثبت‌نام، برای استفاده از تحلیل ساختاری وارد بخش «خرید اشتراک» شوید و درخواست خود را ثبت کنید.</span>
+        </div>
+
+        <div class="login-state">
+          قبلاً ثبت‌نام کرده‌اید؟ <a href="/login">وارد شوید</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="toasts"></div>
+  <script src="/assets/js/common.js?v=20261031"></script>
+  <script src="/assets/js/register.js?v=20261031"></script>
+</body>
+</html>

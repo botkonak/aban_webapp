@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="pub-card">
+  <header class="archive-head">
+    <div>
+      <div class="pub-eyebrow">مرکز آموزش</div>
+      <h1 class="article-title">{{ category.name if category else 'آموزش' }}</h1>
+      <p class="archive-sub">{{ total }} مطلب منتشر شده{% if category %} در این دسته‌بندی{% endif %}</p>
+    </div>
+  </header>
+
+  {% if posts %}
+    <div class="post-grid">
+      {% for post in posts %}
+        <article class="post-card">
+          <a class="post-card-link" href="/education/{{ post.slug }}">
+            {% if post.thumbnail %}
+              <div class="post-thumb"><img src="{{ post.thumbnail }}" alt="{{ post.title }}" loading="lazy"></div>
+            {% else %}
+              <div class="post-thumb post-thumb-empty" aria-hidden="true"><span>آ</span></div>
+            {% endif %}
+            <div class="post-card-body">
+              {% if post.category_name %}<span class="pub-chip">{{ post.category_name }}</span>{% endif %}
+              <h2 class="post-card-title">{{ post.title }}</h2>
+              {% if post.summary %}<p class="post-card-summary">{{ post.summary|safe }}</p>{% endif %}
+              <div class="post-card-meta">
+                <span>{{ post.published_at_fa }}</span>
+                <span>{{ post.reading_time }} دقیقه</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+
+    {% if pages_total > 1 %}
+      <nav class="pub-pager" aria-label="صفحه‌بندی">
+        {% set base = ('/category/' ~ category.slug) if category else '/education' %}
+        {% if page > 1 %}<a href="{{ base }}{{ '?page=' ~ (page - 1) if page > 2 else '' }}">قبلی</a>{% endif %}
+        <span>صفحه {{ page }} از {{ pages_total }}</span>
+        {% if page < pages_total %}<a href="{{ base }}?page={{ page + 1 }}">بعدی</a>{% endif %}
+      </nav>
+    {% endif %}
+  {% else %}
+    <div class="pub-empty">
+      <strong>هنوز مطلبی منتشر نشده است.</strong>
+      <span>به‌زودی مطالب آموزشی در این بخش قرار می‌گیرد.</span>
+    </div>
+  {% endif %}
+</section>
+{% endblock %}
