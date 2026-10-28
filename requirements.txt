@@ -12,5 +12,5 @@ uvicorn[standard]>=0.30,<1
 python-multipart>=0.0.9
 jinja2>=3.1
 bleach>=6.1
-ippanel-python-sdk>=1.0
+ippanel-python-sdk==0.1.0
 uvloop>=0.19; platform_system != "Windows"
